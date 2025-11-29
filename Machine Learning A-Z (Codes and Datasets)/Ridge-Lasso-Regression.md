@@ -132,3 +132,77 @@ print(model.coef_)  # [0.5, 0.0, 0.8, 0.0, 0.0]
 **Lasso:** Penalty = |β₁| + |β₂| (absolute makes weak values go to zero!)
 
 **Result:** Controlled coefficients = Better predictions on new data! 🎯
+
+
+
+-----------------------
+# What is Alpha (α)?
+
+## Alpha = The Strictness Level 🎚️
+
+Think of alpha as a **dial** that controls how strict you are:
+
+---
+
+## The Dial:
+
+```
+Turn Left ←                     Turn Right →
+(Gentle)                         (Strict)
+
+α = 0      α = 0.1    α = 1.0    α = 10     α = 100
+│          │          │          │          │
+No rules   Relaxed    Balanced   Harsh      Extreme
+😴         😊         ⚖️         😠         💀
+```
+
+---
+
+## What Alpha Does:
+
+### Alpha = 0 (No Penalty)
+```
+"Do whatever you want! No punishment!"
+Result: Overfitting 🔥
+```
+
+### Alpha = 0.1 (Small Penalty)
+```
+"Make a mistake? Small fine: $10"
+Result: Slight control
+```
+
+### Alpha = 1.0 (Medium Penalty) ⭐ SWEET SPOT
+```
+"Make a mistake? Medium fine: $1000"
+Result: Good balance! ⚖️
+```
+
+### Alpha = 10 (Large Penalty)
+```
+"Make a mistake? Huge fine: $100,000!"
+Result: Model too scared to do anything
+```
+
+### Alpha = 100 (Extreme Penalty)
+```
+"Make a mistake? FIRED!"
+Result: Model does NOTHING (underfit) 💀
+```
+
+---
+
+## In Simple Terms:
+
+**Alpha = How much you punish large coefficients**
+
+- **Small alpha** (0.01, 0.1) = Gentle punishment → Model keeps big coefficients
+- **Large alpha** (10, 100) = Harsh punishment → Model makes all coefficients tiny
+
+---
+
+## One Sentence:
+
+**Alpha controls how much the model should care about keeping coefficients small!** 🎯
+
+**Start with alpha=1.0 and adjust from there!**
